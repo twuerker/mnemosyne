@@ -23,6 +23,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'annotate', github: 'ctran/annotate_models'
+# can't get this to work
+
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+gem 'therubyracer'
+
+gem "protected_attributes"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,10 +52,11 @@ group :development, :test do
   gem 'spring'
 
   gem "rspec-rails", ">= 2.0.1"
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
+
 
 end
 

@@ -1,0 +1,1222 @@
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (18.7ms)[0m  select sqlite_version(*)
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150405190630)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (11.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (11.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (16.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (11.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150405190630)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150405190630"]]
+  [1m[36m (18.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNotes (20150405194643)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_notes_on_user_id" ON "notes" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150405194643"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-04-05 16:03:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 163ms (Views: 128.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for ::1 at 2015-04-05 16:03:37 -0400
+
+ActionController::RoutingError (No route matches [GET] "/user"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (74.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.3ms)
+
+
+Started GET "/" for ::1 at 2015-04-05 16:04:44 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/properties" for ::1 at 2015-04-05 16:05:06 -0400
+Processing by Rails::InfoController#properties as */*
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/railties-4.2.1/lib/rails/templates/rails/info/properties.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 28.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:05:23 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007faecee0dee8>):
+  app/models/user.rb:7:in `<class:User>'
+  app/models/user.rb:6:in `<top (required)>'
+  app/controllers/users_controller.rb:7:in `index'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (39.5ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 16:05:50 -0400
+Processing by NotesController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007faecee86ac8>):
+  app/models/note.rb:7:in `<class:Note>'
+  app/models/note.rb:6:in `<top (required)>'
+  app/controllers/notes_controller.rb:7:in `index'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (40.4ms)
+
+
+Started GET "/users/index" for ::1 at 2015-04-05 16:09:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"index"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007faecf85d5b0>):
+  app/models/user.rb:7:in `<class:User>'
+  app/models/user.rb:6:in `<top (required)>'
+  app/controllers/users_controller.rb:67:in `set_user'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (32.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (60.5ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 16:14:16 -0400
+Processing by NotesController#index as HTML
+  [1m[36mNote Load (11.8ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  Rendered notes/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 2993ms (Views: 2750.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 16:14:19 -0400
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+  Rendered notes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 98ms (Views: 97.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/application-f1118c89ef9ba6c96b4b0aa00e12f5f4.css?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/notes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/scaffolds-3818e0e948a41c45bbd4f9399599b0d7.css?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/notes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-05 16:14:19 -0400
+
+
+Started GET "/notes/new" for ::1 at 2015-04-05 16:14:27 -0400
+Processing by NotesController#new as HTML
+  Rendered notes/_form.html.erb (247.6ms)
+  Rendered notes/new.html.erb within layouts/application (250.2ms)
+Completed 200 OK in 366ms (Views: 360.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 16:14:51 -0400
+Processing by NotesController#index as HTML
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  Rendered notes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 90ms (Views: 88.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:14:59 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (14.9ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 151ms (Views: 82.6ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-04-05 16:15:25 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 126ms (Views: 121.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 16:15:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Jy44F2GdYHaXmR/BbMI1kpLbBuG/tEDL6b7n56U0sadquw6rRZ/NVe4sHx0FQmkOb/YfuryHeA7p8Ou/bEppA==", "user"=>{"name"=>"Taylor Wuerker"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.8ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-04-05 20:15:34.596758"], ["updated_at", "2015-04-05 20:15:34.596758"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 97ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/users/1" for ::1 at 2015-04-05 16:15:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 153ms (Views: 107.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:15:39 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2015-04-05 16:15:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 93ms (Views: 92.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:15:51 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 81ms (Views: 79.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/1" for ::1 at 2015-04-05 16:16:08 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K0KDtkne0c/Tx2tju1PCWHw2c19uRhHQMl5Al4VkC6tqdNdsuU7be14hv2DK9cMqD8LHOgJK3TMmX3im5kHwyQ==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:16:08 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-04-05 16:17:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/users_controller.rb:67:in `set_user'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (62.5ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:31:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (11.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (14.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 2626ms (Views: 2554.9ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/assets/application-8efd2b51d29825ca3f1ae2415e8764b3.css?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert-4fa131fff2ae05a1d89df662cd4a8531.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown-89b3696cc302eaf377aca640fae08632.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy-f3a0e91892e9edb7ccced4ed84ff23ec.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal-d403efa7333c333fdeecc5daa727c437.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition-49c071d4d736acca69daed5bd6c4fdbd.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides-c898afd34e65cf96cc891719e5c6da70.css?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab-fab339701c02e2cb7d02570dd26fcf10.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip-1727c885f6618bb619e6a29ef0496d11.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button-dcd83af4b8aa46a9026dec4ea360a003.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover-c19ae92999a32fa658ffe5d5cc13d195.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse-cfd6f6e5cff9c41e78cc52464a71358b.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel-ac6115504ba6a31f58406c5978a6aa20.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap-4a7c8463ef111cbe52eec5efe89f8319.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix-745457a96802e8f61e15a7622b54b68f.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/application-afcbb706da0a4dad0fe72d3614bf5e5a.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/assets/bootstrap-91416daf9f05a6e9ca13ef54aa8dcb39.js?body=1" for ::1 at 2015-04-05 16:31:58 -0400
+
+
+Started GET "/users/new" for ::1 at 2015-04-05 16:32:50 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (116.9ms)
+  Rendered users/new.html.erb within layouts/application (133.9ms)
+Completed 200 OK in 365ms (Views: 359.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 16:32:57 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kd/26ibop/Jb9vKF12LOeNgKf0zqysgssb4KUN8CN5Jo6aIw1nitRtYQJoamxM8Kq/7LKYbGBM+lvzJhvCfM8A==", "user"=>{"name"=>"Taylor Wuerker"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.9ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-04-05 20:32:57.541047"], ["updated_at", "2015-04-05 20:32:57.541047"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 59ms (ActiveRecord: 21.2ms)
+
+
+Started GET "/users/2" for ::1 at 2015-04-05 16:32:57 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 248ms (Views: 223.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2015-04-05 16:33:01 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 282ms (Views: 280.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/2" for ::1 at 2015-04-05 16:33:10 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xuXneuXVwp049C5l/83PZ0EJgNzOQf26nffxscv5WwOH07OgFUXIKbUS+maOa84VMv00uaJNMVmJ9smAqNygYQ==", "user"=>{"name"=>"test"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for ::1 at 2015-04-05 16:33:10 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 229ms (Views: 228.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:33:12 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 226ms (Views: 224.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/2" for ::1 at 2015-04-05 16:33:36 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"21OM8hG38RhiaqiNLN0Uykf21Jp6lLpNVns1VJL0oReaZdgo4Sf7rO+MfI5dexW4NAJg/xaYdq5Ceg1l8dFadQ==", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (29.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 37ms (ActiveRecord: 29.8ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 16:33:36 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 230ms (Views: 228.1ms | ActiveRecord: 1.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUsernameToUsers (20150405212717)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (13.2ms)[0m  [1mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150405212717"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddEmailToUsers (20150405212755)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150405212755"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+
+
+Started GET "/users" for ::1 at 2015-04-05 17:54:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (9.9ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 682ms (Views: 616.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-04-05 17:54:20 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (109.1ms)
+  Rendered users/new.html.erb within layouts/application (146.3ms)
+Completed 200 OK in 390ms (Views: 384.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 17:54:31 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Fxt0ogxgXybE+L2ooUc1i5P5/qbpfpNT5WrOQ43UZWhajkIeKGLyBb1NvXTIx2kXbtTn/epNq5blJMIbRKq9w==", "user"=>{"name"=>"Taylor Wuerker", "username"=>"tuwekrer", "email"=>"todo"}, "commit"=>"Create User"}
+Unpermitted parameters: username, email
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-04-05 21:54:31.986132"], ["updated_at", "2015-04-05 21:54:31.986132"]]
+  [1m[36m (62.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 107ms (ActiveRecord: 80.9ms)
+
+
+Started GET "/users/3" for ::1 at 2015-04-05 17:54:32 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 379ms (Views: 274.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 17:54:36 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 226ms (Views: 225.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/3" for ::1 at 2015-04-05 17:56:00 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YZR4CiuM+FLELOGvEbJ4yCQnglJe3kZBfVAzq+JFh3AgoizQ2xzy5knKNaxgFHm6V9M2NzLSiqJpUQuagWB8Eg==", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 3]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 22ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 17:56:00 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 232ms (Views: 230.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-04-05 17:56:41 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 260ms (Views: 258.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 17:56:52 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sCqirarl7JMLQbBbrA7pc2CaXBlY/UvAGhHv+6etOMbxHPZ3WnXmJ4anZFjdqOgBE27ofDTxhyMOENfKxIjDpA==", "user"=>{"name"=>"Taylor Wuerker", "username"=>"tuwerjre", "email"=>"todo"}, "commit"=>"Create User"}
+Unpermitted parameters: username, email
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 291ms (Views: 284.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 17:57:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MMTPVNJ8lqjiXyynkKNmuiOc/Faehv6axwuB6NNTzOFx8puOIuycHG+5+KThBWfIUGhIM/KKMnnTCrnZsHY3gw==", "user"=>{"name"=>"Taylor Wuerker", "username"=>"username", "email"=>"email"}, "commit"=>"Create User"}
+Unpermitted parameters: username, email
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 230ms (Views: 224.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 18:01:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 306ms (Views: 293.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-04-05 18:01:17 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 276ms (Views: 270.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 18:01:26 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VuRo0xtrw+dCtVSEkLArXD+NB6CcHwQL4f+J2f9yh4gX0jwJ6/vJU89TgIfhFiouTHmzxfATyOj1/rHonFd86g==", "user"=>{"name"=>"Taylor Wuerker", "username"=>"test", "email"=>"test2"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-04-05 22:01:26.318384"], ["updated_at", "2015-04-05 22:01:26.318384"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/4" for ::1 at 2015-04-05 18:01:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 234ms (Views: 232.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4" for ::1 at 2015-04-05 18:06:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007fa4bbe23ad0>):
+  app/models/user.rb:14:in `<class:User>'
+  app/models/user.rb:13:in `<top (required)>'
+  app/controllers/users_controller.rb:67:in `set_user'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (46.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.1ms)
+
+
+Started GET "/users/4" for ::1 at 2015-04-05 18:06:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007fa4bbdab198>):
+  app/models/user.rb:14:in `<class:User>'
+  app/models/user.rb:13:in `<top (required)>'
+  app/controllers/users_controller.rb:67:in `set_user'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.2ms)
+
+
+Started GET "/users/4" for ::1 at 2015-04-05 18:13:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 814ms (Views: 725.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4" for ::1 at 2015-04-05 18:13:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 225ms (Views: 224.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 18:13:24 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4t9XhQ2GmGn9O6fP4hwpBIKJHTRXU81Qu/QZk9mYFsOvSmE5KYQ1SoSOpxOLnHWYf6QEb1Rg9ZW7uhXLEObOQ==", "user"=>{"name"=>"Taylor Wuerker", "username"=>"test", "email"=>"test2"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Taylor Wuerker"], ["username", "test"], ["email", "test2"], ["created_at", "2015-04-05 22:13:24.926566"], ["updated_at", "2015-04-05 22:13:24.926566"]]
+  [1m[35m (14.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 43ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/users/5" for ::1 at 2015-04-05 18:13:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 227ms (Views: 226.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 18:13:28 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 251ms (Views: 249.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/4" for ::1 at 2015-04-05 18:13:38 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Cm/74KDjolpioLcYlk9TDZbO57BmVgG/6T2exI6+F9ZLWa86UHOo7u9GYxvn6VJ/5TpT1QpazVz9PKb17ZvstA==", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 18:13:38 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 273ms (Views: 271.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-04-05 18:13:40 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (153.4ms)
+  Rendered users/new.html.erb within layouts/application (180.0ms)
+Completed 200 OK in 425ms (Views: 423.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-04-05 18:13:49 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IcKbVu01X2KDxuT0+/eWtd3Fv/9TUdUhcX7f+GSBN9xg9M+MHaVV1g4gMPeKUZfHrjELmj9dGcJlf+fJB6TMvg==", "user"=>{"name"=>"another one", "username"=>"a1", "email"=>"email.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (63.4ms)[0m  [1mINSERT INTO "users" ("name", "username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "another one"], ["username", "a1"], ["email", "email.com"], ["created_at", "2015-04-05 22:13:49.315764"], ["updated_at", "2015-04-05 22:13:49.315764"]]
+  [1m[35m (90.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 161ms (ActiveRecord: 153.7ms)
+
+
+Started GET "/users/6" for ::1 at 2015-04-05 18:13:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 236ms (Views: 234.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6/edit" for ::1 at 2015-04-05 18:13:52 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/edit.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 266ms (Views: 264.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/6" for ::1 at 2015-04-05 18:13:55 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MnzBBVRWIiRmjjI9z4IInqMMUBjj58No1sgsSR0o/99zSpXfpMYokOto5j6+JAns0PjkfY/rD4vCyRR4fg0EvQ==", "user"=>{"name"=>"another one", "username"=>"a1", "email"=>"email.com"}, "commit"=>"Update User", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/6" for ::1 at 2015-04-05 18:13:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 218ms (Views: 216.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 18:13:58 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 255ms (Views: 254.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 18:49:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (22.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (14.6ms)[0m  SELECT "notes".* FROM "notes"
+  Rendered notes/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 997ms (Views: 897.4ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/notes/new" for ::1 at 2015-04-05 18:49:20 -0400
+Processing by NotesController#new as HTML
+  [1m[36mUser Load (10.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered notes/_form.html.erb (207.0ms)
+  Rendered notes/new.html.erb within layouts/application (252.7ms)
+Completed 200 OK in 489ms (Views: 473.8ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/notes" for ::1 at 2015-04-05 18:49:33 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"riEm33ixB9dcfHhx3XqEBcJBM9XiL013tDOEAbUgW2nvF3IFiCENY9GarHKs3IV3sbWHsI4jgZSgMrww1gWgCw==", "note"=>{"content"=>"this is my first post", "user_id"=>"5"}, "commit"=>"Create Note"}
+WARNING: Can't mass-assign protected attributes for Note: content, user_id
+	app/controllers/notes_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered notes/_form.html.erb (5.3ms)
+  Rendered notes/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 279ms (Views: 271.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/notes" for ::1 at 2015-04-05 18:49:47 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x5QXvrLziC8LZqjpXZedN7rB5nSEpdzyktW+E0b3qEeGokNkQmOCm4aAfOosMZxFyTVSEeipEBGG1IYiJdJTJQ==", "note"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Note"}
+WARNING: Can't mass-assign protected attributes for Note: content, user_id
+	app/controllers/notes_controller.rb:27:in `create'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered notes/_form.html.erb (3.9ms)
+  Rendered notes/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 245ms (Views: 236.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/notes" for ::1 at 2015-04-05 18:50:57 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ibYI096J8lOVmCznNQDygXfwyIAtGnmBkzYk5zbOHezIgFwJLhn45xh++OREpvPzBAR85UEWtWKHNxzWVevmjg==", "note"=>{"content"=>"testing", "user_id"=>"6"}, "commit"=>"Create Note"}
+WARNING: Can't mass-assign protected attributes for Note: content, user_id
+	app/controllers/notes_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered notes/_form.html.erb (3.1ms)
+  Rendered notes/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 248ms (Views: 239.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/notes" for ::1 at 2015-04-05 18:51:38 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SfA9zNShkYMYehY0srNm6B12MmSOcwdYM0pIym3H3PgIxmkWJDGbN5WcwjfDFWeaboKGAeJ/y7snS3D7DuInmg==", "note"=>{"content"=>"this is my first post", "user_id"=>"5"}, "commit"=>"Create Note"}
+WARNING: Can't mass-assign protected attributes for Note: content, user_id
+	app/controllers/notes_controller.rb:27:in `create'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered notes/_form.html.erb (3.6ms)
+  Rendered notes/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 244ms (Views: 237.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/notes" for ::1 at 2015-04-05 18:52:43 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uDhFkjoHmhXRgWBjaZH3XMpkVWvQpndold23xCI3iDb5DhFIypeQoVxntGAYN/YuuZDhDryqu4uB3I/1QRJzVA==", "note"=>{"content"=>"testing now", "user_id"=>"5"}, "commit"=>"Create Note"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.8ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "testing now"], ["user_id", 5], ["created_at", "2015-04-05 22:52:44.315580"], ["updated_at", "2015-04-05 22:52:44.315580"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/notes/1
+Completed 302 Found in 372ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 18:52:44 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (27.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (84.6ms)
+Completed 200 OK in 408ms (Views: 309.4ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 18:54:09 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (50.5ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `get' for #<Class:0x007fc3058d8928>):
+     7: 
+     8: <p>
+     9:   <strong>User:</strong>
+    10:   <%= User.get(@note.user).username %>
+    11: </p>
+    12: <p>
+    13:   <strong>Time:</strong>
+  app/views/notes/show.html.erb:10:in `_app_views_notes_show_html_erb__286866922542424804_70237797456000'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (45.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.0ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 18:55:24 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: 
+     8: <p>
+     9:   <strong>User:</strong>
+    10:   <%= @users[@note.user].username %>
+    11: </p>
+    12: <p>
+    13:   <strong>Time:</strong>
+  app/views/notes/show.html.erb:10:in `_app_views_notes_show_html_erb__286866922542424804_70237795271360'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (23.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (51.7ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 18:57:25 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered notes/show.html.erb within layouts/application (38.6ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `index' for UsersController:Class):
+     7: 
+     8: <p>
+     9:   <strong>User:</strong>
+    10:   <%= UsersController.index[@note.user].username %>
+    11: </p>
+    12: <p>
+    13:   <strong>Time:</strong>
+  app/views/notes/show.html.erb:10:in `_app_views_notes_show_html_erb__286866922542424804_70237761001020'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.7ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 18:58:36 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered notes/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (no implicit conversion of User into Integer):
+     7: 
+     8: <p>
+     9:   <strong>User:</strong>
+    10:   <%= User.all[@note.user].username %>
+    11: </p>
+    12: <p>
+    13:   <strong>Time:</strong>
+  app/views/notes/show.html.erb:10:in `_app_views_notes_show_html_erb__286866922542424804_70237798253420'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (40.3ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 19:00:51 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 269ms (Views: 267.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/1/edit" for ::1 at 2015-04-05 19:01:13 -0400
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered notes/_form.html.erb (3.2ms)
+  Rendered notes/edit.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 263ms (Views: 262.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/notes/1" for ::1 at 2015-04-05 19:01:23 -0400
+Processing by NotesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6K9QUpyK6Qe3JTnHT+HUjeaV4k7ebh4YpYBebwGSg7WpmQSIbBrjszrD7cQ+R9X/lWFWK7Ji0vuxgWZeYrd41w==", "note"=>{"content"=>"testing now again", "user_id"=>"5"}, "commit"=>"Update Note", "id"=>"1"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "notes" SET "content" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["content", "testing now again"], ["updated_at", "2015-04-05 23:01:23.942918"], ["id", 1]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/notes/1
+Completed 302 Found in 17ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-05 19:01:23 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 232ms (Views: 227.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:01:34 -0400
+Processing by NotesController#index as HTML
+  [1m[36mNote Load (0.3ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 267ms (Views: 266.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:03:01 -0400
+Processing by NotesController#index as HTML
+  [1m[36mNote Load (0.4ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 237ms (Views: 235.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:04:14 -0400
+Processing by NotesController#index as HTML
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    16:     <% @notes.each do |note| %>
+    17:       <tr>
+    18:         <td><%= note.content %></td>
+    19:         <td><%=link_to note.user.username, user_path%></td>
+    20:         <td><%= note.created_at %></td>
+    21:         <td><%= link_to 'Show', note %></td>
+    22:         <td><%= link_to 'Edit', edit_note_path(note) %></td>
+  app/views/notes/index.html.erb:19:in `block in _app_views_notes_index_html_erb__628103832416755763_70237795815540'
+  app/views/notes/index.html.erb:16:in `_app_views_notes_index_html_erb__628103832416755763_70237795815540'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (50.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (64.7ms)
+
+
+Started GET "/users" for ::1 at 2015-04-05 19:10:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 272ms (Views: 270.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:10:56 -0400
+Processing by NotesController#index as HTML
+  Rendered notes/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/twuerker/RubymineProjects/Mnemosyne/app/views/notes/index.html.erb:19: syntax error, unexpected ')'
+...r_path(User.find(note.user)), );@output_buffer.safe_append='...
+...                               ^
+/Users/twuerker/RubymineProjects/Mnemosyne/app/views/notes/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+/Users/twuerker/RubymineProjects/Mnemosyne/app/views/notes/index.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/twuerker/RubymineProjects/Mnemosyne/app/views/notes/index.html.erb:35: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/notes/index.html.erb:19: syntax error, unexpected ')'
+  app/views/notes/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+  app/views/notes/index.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/notes/index.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (23.8ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (51.5ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:11:49 -0400
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    16:     <% @notes.each do |note| %>
+    17:       <tr>
+    18:         <td><%= note.content %></td>
+    19:         <td><%=link_to note.user.username, user_url %></td>
+    20:         <td><%= note.created_at %></td>
+    21:         <td><%= link_to 'Show', note %></td>
+    22:         <td><%= link_to 'Edit', edit_note_path(note) %></td>
+  app/views/notes/index.html.erb:19:in `block in _app_views_notes_index_html_erb__628103832416755763_70237761747860'
+  app/views/notes/index.html.erb:16:in `_app_views_notes_index_html_erb__628103832416755763_70237761747860'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (39.9ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:12:49 -0400
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `user_id' for #<User:0x007fc305830f20>):
+    16:     <% @notes.each do |note| %>
+    17:       <tr>
+    18:         <td><%= note.content %></td>
+    19:         <td><%=link_to note.user.username, user_path(note.user.user_id) %></td>
+    20:         <td><%= note.created_at %></td>
+    21:         <td><%= link_to 'Show', note %></td>
+    22:         <td><%= link_to 'Edit', edit_note_path(note) %></td>
+  app/views/notes/index.html.erb:19:in `block in _app_views_notes_index_html_erb__628103832416755763_70237793997500'
+  app/views/notes/index.html.erb:16:in `_app_views_notes_index_html_erb__628103832416755763_70237793997500'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.2ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (44.8ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-05 19:13:25 -0400
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 226ms (Views: 224.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/5" for ::1 at 2015-04-05 19:13:29 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 269ms (Views: 267.0ms | ActiveRecord: 0.1ms)
