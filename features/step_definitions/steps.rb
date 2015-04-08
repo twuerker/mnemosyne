@@ -20,27 +20,35 @@ When(/^I click to create a new user$/) do
 end
 
 Then(/^I should see the new user's page$/) do
-  assert page.has_content?("User was successfully created")
+  page.has_content?("User was successfully created")
 end
 
 Then(/^I should see the correct name/) do
-  assert page.has_content?("Jane Doe")
+  page.has_content?("Jane Doe")
 end
 
 Then(/^I should see the correct username/) do
-  assert page.has_content?('JDoe')
+  page.has_content?('JDoe')
 end
 
 Then(/^I should see the correct email$/) do
-  assert page.has_content?('jane.doe@gmail.com')
+  page.has_content?('jane.doe@gmail.com')
 end
 
 Then(/^I should see errors on the page$/) do
-  assert page.has_css?('div.field_with_errors')
+  page.has_css?('div.field_with_errors')
+end
+
+Given(/^A user named Jane Doe exists$/) do
+  visit(new_user_path)
+  fill_in 'Name', :with => "Jane Doe"
+  fill_in 'Username', :with => "JDoe"
+  fill_in 'Email', :with => "jane.doe@gmail.com"
+  click_button 'Create User'
 end
 
 Given(/^I am on the note creation page$/) do
-  visit(new_note_page)
+  visit(new_note_path)
 end
 
 When(/^I fill in content$/) do
@@ -48,7 +56,7 @@ When(/^I fill in content$/) do
 end
 
 When(/^I pick an owner$/) do
-  fill_in "Owner", :with => "JDoe"
+  select("JDoe", :from => 'Owner')
 end
 
 When(/^I click to create a new note$/) do
@@ -56,29 +64,30 @@ When(/^I click to create a new note$/) do
 end
 
 Then(/^I should see the new note's page$/) do
-  assert page.has_content?("Note was successfully created")
+  page.has_content?("Note was successfully created")
 end
 
 Then(/^I should see the correct content$/) do
-  assert page.has_content?("gibberish")
+  page.has_content?("gibberish")
 end
 
 Then(/^I should see the correct user's username$/) do
-  assert page.has_content?("JDoe")
+  page.has_content?("JDoe")
 end
 
-#how do i do set up with this so I can test properly?
-# testuser = User.create(:name => "John Doe", :username => "TestUser", :email => "john.doe@gmail.com")
-# mynote = Note.create(:content => "nothing important", :user_id => testuser.id)
-
-Given(/^I am on the note page$/) do
-  visit(note_page)
+Given (/^A note by Jane Doe is created$/) do
+  visit(new_note_path)
+  fill_in "Content", :with => "gibberish"
+  select("JDoe", :from => 'Owner')
+  click_button 'Create Note'
 end
 
 When(/^I click on the owner's username$/) do
-  click_link('TestUser')
+  click_link('JDoe')
 end
 
 Then(/^I should be on the owner's page$/) do
-  assert page.equal?(user_path(testuser))
+  page.has_content?("Jane Doe")
+  page.has_content?('JDoe')
+  page.has_content?('jane.doe@gmail.com')
 end

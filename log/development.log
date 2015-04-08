@@ -1220,3 +1220,12 @@ Processing by UsersController#show as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
   Rendered users/show.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 269ms (Views: 267.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/notes/new" for ::1 at 2015-04-08 15:49:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (11.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NotesController#new as HTML
+  [1m[35mUser Load (10.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered notes/_form.html.erb (210.4ms)
+  Rendered notes/new.html.erb within layouts/application (262.0ms)
+Completed 200 OK in 1180ms (Views: 1091.2ms | ActiveRecord: 10.7ms)

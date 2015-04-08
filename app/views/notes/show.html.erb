@@ -7,7 +7,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @note.user.username %>
+  <%= link_to @note.user.username, user_path(@note.user) %>
 </p>
 <p>
   <strong>Time:</strong>

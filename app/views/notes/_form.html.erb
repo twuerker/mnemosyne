@@ -16,7 +16,7 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
+    <%= f.label :user_id, 'Owner' %><br>
     <%= collection_select :note, :user_id, User.all, :id, :username %>
   </div>
   <div class="actions">

@@ -112,6 +112,45 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="false" name="All features in features: Mnemosyne" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="Mnemosyne" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$MODULE_DIR$/features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -128,6 +167,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.2.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.2.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.1, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="annotate (v2.6.8@52ffef, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v6.0.0, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v0.7.2, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.1.5) [gem]" level="application" />
@@ -138,6 +178,7 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.3.0, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.9.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="columnize (v0.9.0, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="commonjs (v0.2.7, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.3.19, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails (v1.4.2, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails-training-wheels (v1.0.0, RVM: ruby-2.1.5) [gem]" level="application" />
@@ -153,6 +194,9 @@
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.2.12, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.0.3, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.2, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="less (v2.6.0, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="less-rails (v2.6.0, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="libv8 (v3.16.14.7, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.0.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.6.3, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v2.4.3, RVM: ruby-2.1.5) [gem]" level="application" />
@@ -161,6 +205,7 @@
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.11.0, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_test (v0.1.2, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.6.2, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="protected_attributes (v1.0.9, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.6.0, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.3, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.2.1, RVM: ruby-2.1.5) [gem]" level="application" />
@@ -170,6 +215,7 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ref (v1.0.5, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.2.2, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.2.0, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.2.1, RVM: ruby-2.1.5) [gem]" level="application" />
@@ -182,10 +228,12 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.12.3, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v2.2.4, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.10, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="therubyracer (v0.12.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v2.5.3, RVM: ruby-2.1.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="twitter-bootstrap-rails (v3.2.0, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.7.1, RVM: ruby-2.1.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v2.1.2, RVM: ruby-2.1.5) [gem]" level="application" />
