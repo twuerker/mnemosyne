@@ -1229,3 +1229,382 @@ Processing by NotesController#new as HTML
   Rendered notes/_form.html.erb (210.4ms)
   Rendered notes/new.html.erb within layouts/application (262.0ms)
 Completed 200 OK in 1180ms (Views: 1091.2ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for ::1 at 2015-04-10 13:46:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (19.3ms)
+Completed 200 OK in 106ms (Views: 80.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-04-10 13:46:31 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (24.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 682ms (Views: 605.5ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/ideas" for ::1 at 2015-04-10 13:48:00 -0400
+
+ActionController::RoutingError (No route matches [GET] "/ideas"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (51.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (131.0ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.5ms)
+
+
+Started GET "/ideas" for ::1 at 2015-04-10 13:48:01 -0400
+
+ActionController::RoutingError (No route matches [GET] "/ideas"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/twuerker/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.7ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/twuerker/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (40.1ms)
+
+
+Started GET "/users" for ::1 at 2015-04-10 13:48:51 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 228ms (Views: 226.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-04-10 13:52:59 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 247ms (Views: 245.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-04-10 13:53:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 253ms (Views: 251.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-bfe09ad0c56259023759275d800a85f2.css?body=1" for ::1 at 2015-04-10 13:53:45 -0400
+
+
+Started GET "/users" for ::1 at 2015-04-10 13:54:44 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 254ms (Views: 252.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPictureToNote (20150410180122)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (13.0ms)[0m  [1mALTER TABLE "notes" ADD "picture" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150410180122"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+
+
+Started GET "/users" for ::1 at 2015-04-10 14:06:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 831ms (Views: 800.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes" for ::1 at 2015-04-10 14:07:05 -0400
+Processing by NotesController#index as HTML
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 356ms (Views: 345.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/notes/1" for ::1 at 2015-04-10 14:07:18 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 298ms (Views: 246.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes/new" for ::1 at 2015-04-10 14:07:27 -0400
+Processing by NotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered notes/_form.html.erb (197.0ms)
+  Rendered notes/new.html.erb within layouts/application (213.0ms)
+Completed 200 OK in 475ms (Views: 473.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/notes" for ::1 at 2015-04-10 14:08:18 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MyRZu2FoRPzpevLK2VaW5N93hx1bq0wc3Z2X9QfOKZdyEg1hkfhOSGScJsmo8JeWrIMzeDengP/JnK/EZOvS9Q==", "note"=>{"content"=>"At the stadium", "user_id"=>"5", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007ff5bd4e15c8 @tempfile=#<Tempfile:/var/folders/m4/ldc9m53j0zq9058wc9r85qxc0000gn/T/RackMultipart20150410-15224-416y7.JPG>, @original_filename="IMG_0002.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[picture]\"; filename=\"IMG_0002.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Note"}
+Unpermitted parameter: picture
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "At the stadium"], ["user_id", 5], ["created_at", "2015-04-10 18:08:18.403270"], ["updated_at", "2015-04-10 18:08:18.403270"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:08:18 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 388ms (Views: 386.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:09:26 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 249ms (Views: 247.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:10:48 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 256ms (Views: 255.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:10:59 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.3ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 241ms (Views: 238.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:12:17 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 248ms (Views: 244.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:12:21 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 234ms (Views: 232.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:14:04 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 238ms (Views: 235.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:14:07 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 248ms (Views: 246.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:14:17 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 234ms (Views: 232.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:14:20 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 271ms (Views: 269.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:22:19 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 281ms (Views: 278.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:22:22 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 235ms (Views: 233.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:22:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mNote Load (0.3ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (72.3ms)
+Completed 200 OK in 982ms (Views: 837.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/notes/2/edit" for ::1 at 2015-04-10 14:23:13 -0400
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered notes/_form.html.erb (211.3ms)
+  Rendered notes/edit.html.erb within layouts/application (247.1ms)
+Completed 200 OK in 506ms (Views: 504.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/notes/2" for ::1 at 2015-04-10 14:23:28 -0400
+Processing by NotesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4hKN+yUbO1JQErsKyPRSSXOYWo7S/LmyrlRIPGawl5yjJNkh1Ysx5t30bwm5UlM7AGzu677wdVG6VXANBZVs/g==", "note"=>{"content"=>"At the stadium", "user_id"=>"5", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007fae4cfdd958 @tempfile=#<Tempfile:/var/folders/m4/ldc9m53j0zq9058wc9r85qxc0000gn/T/RackMultipart20150410-15271-ol13p3.JPG>, @original_filename="IMG_0002.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[picture]\"; filename=\"IMG_0002.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Note", "id"=>"2"}
+  [1m[35mNote Load (0.2ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 2]]
+Unpermitted parameter: picture
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:23:28 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 289ms (Views: 284.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:27:12 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 257ms (Views: 240.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/notes/2/edit" for ::1 at 2015-04-10 14:27:16 -0400
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered notes/_form.html.erb (4.8ms)
+  Rendered notes/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 267ms (Views: 265.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/notes/2" for ::1 at 2015-04-10 14:27:24 -0400
+Processing by NotesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lq/UH/2ABHkXkE/sxYsrlefSJTvAseQENuftVauYLTPXmYDFDRAOzZp2m++0LSrnlCaRXqy9KOci5tVkyL3WUQ==", "note"=>{"content"=>"At the stadium", "user_id"=>"5", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007fae4ad905f8 @tempfile=#<Tempfile:/var/folders/m4/ldc9m53j0zq9058wc9r85qxc0000gn/T/RackMultipart20150410-15271-wre3mz.JPG>, @original_filename="IMG_0002.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[picture]\"; filename=\"IMG_0002.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Note", "id"=>"2"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameter: picture
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/notes/2" for ::1 at 2015-04-10 14:27:24 -0400
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mNote Load (0.2ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered notes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 304ms (Views: 302.0ms | ActiveRecord: 0.3ms)
