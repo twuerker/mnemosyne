@@ -1,0 +1,29 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+  <br/>
+  <strong>Username:</strong>
+  <%= @user.username %>
+  <br/>
+  <strong>Email:</strong>
+  <%= @user.email %>
+  <br/>
+  <strong>Notes:</strong>
+
+    <% if @notes.nil? %>
+        <i>no notes yet</i>
+    <% else %>
+      <table>
+        <% @notes.each do |note| %>
+        <tr>
+         <td><%= note.created_at %></td>
+         <td><%= note.content %></td>
+        </tr>
+        <% end %>
+      </table>
+    <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -62,6 +62,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/1/home
+  def home
+    @user = current_user
+    @notes = current_user.notes
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
