@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h2 align="center">Find Friends</h2>
+
+<div align="center" style="background-color: #44b4cc">
+  <%= link_to 'My Friends', friends_user_path %>
+</div>
+<br/>
+
+<div>
+  <table align="center" width=90%>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @others.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= link_to 'Add Friend', new_friendship_path(:friend_id => user.id, :user_id => current_user.id, :status => 'oneway') %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

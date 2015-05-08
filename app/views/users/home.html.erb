@@ -1,29 +1,56 @@
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-  <br/>
-  <strong>Username:</strong>
-  <%= @user.username %>
-  <br/>
-  <strong>Email:</strong>
-  <%= @user.email %>
-  <br/>
-  <strong>Notes:</strong>
-
-    <% if @notes.nil? %>
-        <i>no notes yet</i>
-    <% else %>
-      <table>
-        <% @notes.each do |note| %>
-        <tr>
-         <td><%= note.created_at %></td>
-         <td><%= note.content %></td>
-        </tr>
+<h2 align="center">Home Page</h2>
+<table width=100%>
+  <tr>
+    <td>
+      <div class="container" style="background-color:#44b4cc">
+        <strong>Name:</strong>
+        <%= @user.name %>
+        <br/>
+        <strong>Username:</strong>
+        <%= @user.username %>
+        <br/>
+        <strong>Email:</strong>
+        <%= @user.email %>
+        <br/>
+        <%= link_to 'Edit User Info', edit_user_path(@user) %> |
+        <%= link_to 'My Friends', friends_user_path(@user) %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="container" align="center" >
+        <strong>My Notes:</strong>
+        <% if @my_notes.empty? %>
+            <i>no notes yet</i>
+        <% else %>
+            <br/>
+            <table class="table table-striped" style="background-color: #dbffb4">
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Note</th>
+                <th></th>
+              </tr>
+              <% @my_notes.each do |note| %>
+                  <tr>
+                    <td><%= note.created_at.localtime().strftime("%m/%d/%Y")%></td>
+                    <td><%= note.created_at.localtime().strftime("%I:%M%p")%></td>
+                    <td><%= note.content %></td>
+                    <td>
+                        <%= link_to 'Show', note_path(note) %> | <%= link_to 'Edit', edit_note_path(note) %>
+                    </td>
+                  </tr>
+                <% end %>
+            </table>
         <% end %>
-      </table>
-    <% end %>
-</p>
+        <br/>
+        <br/>
+        <%= link_to 'Write new note', new_note_path %>
+      </div>
+    </td>
+  </tr>
+</table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+

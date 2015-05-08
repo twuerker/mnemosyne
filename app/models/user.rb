@@ -31,4 +31,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
 
   has_many :notes
+
+  has_many :friendships
+  has_many :friends, :through => :friendships
+
 end

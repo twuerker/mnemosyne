@@ -10,8 +10,9 @@
 #
 
 class Note < ActiveRecord::Base
-  attr_accessible :note_id, :user_id, :content
+  attr_accessible :id, :user_id, :content
   belongs_to :user
   validates :user_id, :presence => true
-  mount_uploader :picture, PictureUploader
+
+  has_many :participants, :class_name => 'User'
 end

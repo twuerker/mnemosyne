@@ -10,6 +10,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @note = Note.find(params[:id])
   end
 
   # GET /notes/new
@@ -19,6 +20,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+    @note = Note.find(params[:id])
   end
 
   # POST /notes

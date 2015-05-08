@@ -1,22 +1,21 @@
 
 <p>
-  <strong>Picture:</strong>
-  <%= image_tag @note.picture_url.to_s, :width => 600 if @note.picture.present? %>
-</p>
-
-<p>
   <strong>Content:</strong>
   <%= @note.content %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= link_to @note.user.username, user_path(@note.user) %>
+  <strong>Owner:</strong>
+  <% if not @note.user.name.nil? %>
+      <%= @note.user.name %>
+  <% else %>
+    <%= @note.user.email %>
+  <% end %>
 </p>
 <p>
   <strong>Time:</strong>
-  <%= @note.created_at %>
+  <%= @note.created_at.localtime().strftime("%I:%M%p %m/%d/%Y") %>
 </p>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<%= link_to 'Home', home_user_path(@note.user) %> |
+<%= link_to 'Edit', edit_note_path(@note) %>

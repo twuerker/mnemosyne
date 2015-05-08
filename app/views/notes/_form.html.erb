@@ -15,14 +15,11 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+
   <div class="field">
-    <%= f.label :user_id, 'Owner' %><br>
-    <%= collection_select :note, :user_id, User.all, :id, :username %>
+    <%= f.hidden_field :user_id, :value => current_user.id %><br>
   </div>
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

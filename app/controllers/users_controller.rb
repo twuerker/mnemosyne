@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    if @user != current_user then
+      redirect_to user_url(@user), :alert => 'Cannot edit other users.'
+    end
   end
 
   # POST /users
@@ -65,7 +68,18 @@ class UsersController < ApplicationController
   # GET /users/1/home
   def home
     @user = current_user
-    @notes = current_user.notes
+    @my_notes = current_user.notes
+  end
+
+  #GET /users/1/friends
+  def friends
+    @user = current_user
+    @my_friends = current_user.friends
+  end
+
+  def find_friends
+    @user = current_user
+    @others = User.where.not(:id => current_user.id)
   end
 
   private

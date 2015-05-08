@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h2 align="center">Listing Friends</h2>
+
+<div align="center" style="background-color: #44b4cc">
+<%= link_to 'Find new friends', find_friends_user_path %>
+</div>
+
+<br/>
+
+<div>
+  <table align="center" width=90%>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @my_friends.each do |friend| %>
+        <tr>
+          <td><%= friend.name %></td>
+          <td><%= friend.username %></td>
+          <td><%= friend.email %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
