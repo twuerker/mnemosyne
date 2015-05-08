@@ -9116,3 +9116,34 @@ Processing by NotesController#show as HTML
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered notes/show.html.erb within layouts/application (7.4ms)
 Completed 200 OK in 277ms (Views: 273.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/home" for ::1 at 2015-05-08 03:01:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#home as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mNote Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "notes" WHERE "notes"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."user_id" = ?  [["user_id", 1]]
+  Rendered users/home.html.erb within layouts/application (81.7ms)
+Completed 200 OK in 505ms (Views: 436.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/friends" for ::1 at 2015-05-08 03:01:21 -0400
+Processing by UsersController#friends as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 1]]
+  Rendered users/friends.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 248ms (Views: 238.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/friends" for ::1 at 2015-05-08 03:07:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#friends as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 1]]
+  Rendered users/friends.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 429ms (Views: 358.2ms | ActiveRecord: 1.4ms)

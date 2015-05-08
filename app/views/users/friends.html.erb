@@ -8,7 +8,10 @@
 
 <br/>
 
-<div>
+<div align="center">
+  <% if @my_friends.empty? %>
+      <i>You have no friends. Go find some!</i>
+  <% else %>
   <table align="center" width=90%>
     <thead>
     <tr>
@@ -28,4 +31,5 @@
     <% end %>
     </tbody>
   </table>
+  <% end %>
 </div>
